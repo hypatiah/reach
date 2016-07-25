@@ -14,14 +14,16 @@ gem 'rake'
 
 gem 'shotgun'
 
+gem 'faker', github: 'stympy/faker'
+
 group :test do
-  gem 'shoulda-matchers'
-  gem 'rack-test'
-  gem 'rspec', '~>3.0'
-  gem 'capybara'
+    gem 'shoulda-matchers'
+    gem 'rack-test'
+    gem 'rspec', '~>3.0'
+    gem 'capybara'
 end
 
 group :test, :development do
-  gem 'factory_girl'
-  gem 'faker'
+    gem 'factory_girl'
+    # gem 'faker'
 end

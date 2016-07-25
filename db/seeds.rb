@@ -1,16 +1,7 @@
-require 'faker'
 10.times do
     User.new(username: Faker::Internet.user_name, email: Faker::Internet.email, password_hash: Faker::Internet.password(6, 10))
 end
 
 15.times do
-    Text.create(user_id: rand(1..10), description: Faker::Lorem.paragraph(2))
-end
-
-15.times do
-    Contact.create(user_id: rand(1..10), name: Faker::Name.name, phone: Faker::PhoneNumber.phone_number, relationship: Faker::Team.creature)
-end
-
-15.times do
-    Reach.create(user_id: rand(1..10), text_id: rand(1..15), contact_id: rand(1..15))
+    Reach.create(user_id: rand(1..10), contact_name: Faker::Name.name, contact_phone: Faker::PhoneNumber.phone_number, text: Faker::Lorem.paragraph(2), label: Faker::Team.creature, main_reach: Faker::Boolean.boolean)
 end
