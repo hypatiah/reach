@@ -4,6 +4,7 @@ class CreateReaches < ActiveRecord::Migration
             t.integer :user_id
             t.integer :text_id
             t.integer :contact_id
+            t.string :label
 
             t.timestamps(null: false)
         end
