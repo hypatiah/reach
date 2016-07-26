@@ -1,4 +1,3 @@
-
 get '/users/new' do
     erb :'users/new'
 end
@@ -20,4 +19,9 @@ post '/users/new' do
     else @error = "Sorry, passwords don't match"
          erb :'/users/new'
     end
+end
+
+get '/dashboard' do
+    @user = User.find(session[:user_id])
+    erb :dashboard
 end
