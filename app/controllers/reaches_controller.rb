@@ -8,7 +8,13 @@ get '/reaches/new' do
 end
 
 post '/reaches/new' do
-
+  @reach = Reach.new(user_id: session[:user_id], contact_name: params[:contact_name], contact_phone: params[:contact_phone], text: params[:text], label: params[:label], main_reach: params[:main_reach])
+  if @reach.save
+    redirect '/reaches/all'
+  else
+    @error = "Invalid input, Phone number and Text fields required"
+    erb :'reaches/new'
+  end
 end
 
 get '/reaches/:id' do
