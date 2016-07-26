@@ -3,6 +3,6 @@ get '/' do
 end
 
 get '/dashboard' do
-    @user = User.create(username: params[:username], email: params[:email], password: params[:password])
+    @user = User.find(sessions[:user_id])
     erb :dashboard
 end

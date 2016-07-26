@@ -17,6 +17,8 @@ gem 'shotgun'
 gem 'faker', github: 'stympy/faker'
 
 gem 'bcrypt'
+
+gem 'pry'
 group :test do
     gem 'shoulda-matchers'
     gem 'rack-test'
