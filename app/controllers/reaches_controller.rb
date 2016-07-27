@@ -27,7 +27,13 @@ get '/reaches/:id/edit' do
   erb :'reaches/edit'
 end
 
-post '/reaches/:id/delete' do
+put '/reaches/:id' do
+  @reach = Reach.find(params[:id])
+  @reach.update(params[:reach])
+  redirect "/reaches/#{@reach.id}"
+end
+
+delete '/reaches/:id' do
   @reach = Reach.find(params[:id])
   @reach.destroy
   redirect '/reaches/all'

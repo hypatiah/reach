@@ -1,0 +1,16 @@
+<h1> Update Reach </h1>
+
+<div class="container">
+  <div class="update_reach">
+    <form action="/reaches/<%= @reach.id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      Contact name: <input type="text" name="reach[contact_name]" value="<%=@reach.contact_name %>"><br>
+      Contact phone: <input type="text" name="reach[contact_phone]" value="<%=@reach.contact_phone %>"><br>
+      Text: <br>
+      <textarea name="reach[text]" rows="5"><%= @reach.text %></textarea><br>
+      Label: <input type="text" name="reach[label]" value="<%=@reach.label %>"><br>
+      <input type="checkbox" name="reach[main_reach]" <% if @reach.main_reach %>checked<% end %>>Set as primary Reach<br>
+      <input type="submit" value="Update"><br>
+    </form>
+  </div>
+</div>
