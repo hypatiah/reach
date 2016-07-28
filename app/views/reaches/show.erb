@@ -1,0 +1,17 @@
+<h1> Reach </h2>
+Label:  <%= @reach.label %> <br>
+Contact name:  <%= @reach.contact_name %><br>
+Contact phone:  <%= @reach.contact_phone %><br>
+Text: <%= @reach.text %><br>
+Label:  <%= @reach.label %><br>
+Primary reach?
+<% if @reach.main_reach %>
+Yes
+<% else %>
+No
+<% end %>
+<br>
+<br>
+<a href="/reaches/<%= @reach.id %>/edit"> Edit Reach </a>
+<br>
+<a href="/reaches/all">All Reaches</a>
