@@ -1,1 +1,3 @@
-web: bundle exec ruby app.rb -p 3000 
+web: bundle exec ruby web.rb -p $PORT
+
+raise $PORT.inspect
