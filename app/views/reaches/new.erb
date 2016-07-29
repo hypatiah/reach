@@ -1,4 +1,5 @@
 <div class="container">
+  <center>
 <h1> Make a Reach </h1>
 
 <% if @error %>
@@ -6,12 +7,13 @@
 <% end %>
 
 <form action='/reaches/new' method="POST">
-  <label>Name of contact: </label><input type="text" name="contact_name" placeholder="Contact name"><br><br>
-  <label>Contact phone: </label><input type="text" name="contact_phone" placeholder="+12345678901"><br><br>
+  <label>Name of contact: </label> <input type="text" name="contact_name" placeholder="Contact name"><br><br>
+  <label>Contact phone: </label> <input type="text" name="contact_phone" placeholder="+12345678901"><br><br>
   <label>Text: </label><br>
   <textarea name="text" placeholder="Write your text message here" rows="5"></textarea><br><br>
   <label>Label: </label> <input type="text" name="label" placeholder="Reach description"><br><br>
   <input type="checkbox" name="main_reach">Set as main Reach <br><br>
   <input type="submit" value="Create" class="btn btn-success">
 </form>
+</center>
 </div>
