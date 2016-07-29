@@ -23,6 +23,11 @@ require 'erb'
 require 'faker'
 require 'bcrypt'
 require 'pry'
+# require 'dotenv'
+# require 'twilio-ruby'
+#twilio rest client
+# client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
+
 # Some helper constants for path-centric logic
 APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
 
