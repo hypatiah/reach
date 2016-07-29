@@ -1,5 +1,5 @@
 10.times do
-    User.create(username: Faker::Internet.user_name, email: Faker::Internet.email, password: Faker::Internet.password(6, 10))
+    User.create(name: Faker::Name.name, email: Faker::Internet.email, phone: Faker::PhoneNumber.phone_number, password: Faker::Internet.password(6, 10))
 end
 
 15.times do
