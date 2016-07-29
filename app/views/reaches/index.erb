@@ -1,12 +1,16 @@
-<h1><center><%= @user.name %>'s Reaches</center></h1>
+<div class="container">
+  <center>
+  <h1><%= @user.name %>'s Reaches</h1>
 
 <% if @user.reaches.empty? %>
 <h3><em> Look's like you don't have any Reaches yet! </em> </h3>
 <% end %>
-<ul>
+<div class="list-group">
   <% @user.reaches.each do |reach| %>
-  <li><a href="/reaches/<%= reach.id %>"><%= reach.label %></a></li>
+  <a href="/reaches/<%= reach.id %>" class="list-group-item"><%= reach.label %></a>
   <% end %>
-</ul>
+</div>
 
-<a href='/reaches/new'>Create Reach</a>
+<a href='/reaches/new' class="btn btn-info">Create Reach</a>
+</center>
+</div>
