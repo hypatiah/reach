@@ -1,10 +1,10 @@
 <h1> Reach </h2>
-Label:  <%= @reach.label %> <br>
-Contact name:  <%= @reach.contact_name %><br>
-Contact phone:  <%= @reach.contact_phone %><br>
-Text: <%= @reach.text %><br>
-Label:  <%= @reach.label %><br>
-Primary reach?
+<label>Label: </label> <%= @reach.label %> <br>
+<label>Contact name:</label>  <%= @reach.contact_name %><br>
+<label>Contact phone:</label>  <%= @reach.contact_phone %><br>
+<label>Text:</label> <%= @reach.text %><br>
+<label>Label:</label>  <%= @reach.label %><br>
+<label>Primary reach?</label>
 <% if @reach.main_reach %>
 Yes
 <% else %>
@@ -12,6 +12,5 @@ No
 <% end %>
 <br>
 <br>
-<a href="/reaches/<%= @reach.id %>/edit"> Edit Reach </a>
-<br>
-<a href="/reaches/all">All Reaches</a>
+<a href="/reaches/<%= @reach.id %>/edit" class="btn btn-warning"> Edit Reach </a> <br> <br>
+<a href="/reaches/all" class="btn btn-info">All Reaches</a>
