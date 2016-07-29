@@ -2,7 +2,7 @@ post '/send_sms' do
   @user = User.find(session[:user_id])
   reach = @user.reaches.find_by(main_reach: true)
   to = reach.contact_phone
-  message = reach.text + " -- sent by: " + @user.username + " via Reach"
+  message = reach.text + " -- sent by: " + @user.name + " via Reach"
   p client = Twilio::REST::Client.new(
     ENV["TWILIO_ACCOUNT_SID"],
     ENV["TWILIO_AUTH_TOKEN"]
