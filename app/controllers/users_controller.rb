@@ -3,8 +3,9 @@ get '/users/new' do
 end
 
 post '/users/new' do
-    if params[:password1] == params[:password2]
-        @user = User.new(name: params[:name], email: params[:email], phone: params[:phone], password: params[:password2])
+    p params
+    if params[:password1] == params[:user]['password']
+        @user = User.new(params[:user])
         if @user.save
             login(@user)
             redirect '/dashboard'
