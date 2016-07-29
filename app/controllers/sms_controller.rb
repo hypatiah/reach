@@ -1,17 +1,19 @@
-# post '/send_sms' do
-#   p params
-#   to = params[:contact_phone]
-#   message = params[:text]
-#   p client = Twillio::REST::Client.new(
-#     ENV["TWILIO_ACCOUNT_SID"],
-#     ENV["TWILIO_AUTH_TOKEN"]
-#   )
-#   client.messages.create(
-#     to: to,
-#     from: "+12155844169"
-#     body: message
-#   )
-# end
+post '/send_sms' do
+  @user = User.find(session[:user_id])
+  reach = @user.reaches.find_by(main_reach: true)
+  to = reach.contact_phone
+  message = reach.text
+  p client = Twilio::REST::Client.new(
+    ENV["TWILIO_ACCOUNT_SID"],
+    ENV["TWILIO_AUTH_TOKEN"]
+  )
+  client.messages.create(
+    to: to,
+    from: "+16502001654",
+    body: message
+  )
+  redirect '/dashboard'
+end
 
 # post '/receive_sms' do
 #   content_type 'text/xml'

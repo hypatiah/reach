@@ -4,7 +4,11 @@
 <%= @user.username %>
 <br>
 
-<center><input id="round" type="submit" value="REACH"></center>
+<center>
+  <form action="/send_sms" method="POST">
+    <input id="round" type="submit" value="REACH">
+  </form>
+</center>
 <br>
 <a href='/reaches/all'>My Reaches</a>
 <br>

@@ -20,8 +20,8 @@ gem 'faker', github: 'stympy/faker'
 gem 'bcrypt'
 
 gem 'pry'
-# gem 'dotenv'
-# gem 'twilio-ruby'
+gem 'dotenv'
+gem 'twilio-ruby'
 
 group :test do
     gem 'shoulda-matchers'
