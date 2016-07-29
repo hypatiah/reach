@@ -12,7 +12,7 @@ post '/reaches/new' do
   if @reach.save
     redirect '/reaches/all'
   else
-    @error = "Invalid input, Phone number and Text fields required"
+    @error = "Sorry, invalid input. Phone number and Text fields are required"
     erb :'reaches/new'
   end
 end
@@ -30,6 +30,15 @@ end
 put '/reaches/:id' do
   @reach = Reach.find(params[:id])
   @reach.update(params[:reach])
+  @user = User.find(session[:user_id])
+  if params[:reach]['main_reach'] == "on"
+    @user.reaches.where(main_reach: true).each do |reach|
+      reach.update_attributes!(main_reach: false)
+    end
+    @reach.update(main_reach: true)
+  else
+    @reach.update(main_reach: false)
+  end
   redirect "/reaches/#{@reach.id}"
 end
 
