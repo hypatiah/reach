@@ -33,7 +33,7 @@ put '/reaches/:id' do
   @user = User.find(session[:user_id])
   if params[:reach]['main_reach'] == "on"
     @user.reaches.where(main_reach: true).each do |reach|
-      reach.update_attributes!(main_reach: false)
+      reach.update(main_reach: false)
     end
     @reach.update(main_reach: true)
   else
