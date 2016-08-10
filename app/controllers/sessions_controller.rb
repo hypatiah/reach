@@ -1,5 +1,10 @@
 get '/sessions/new' do
-    erb :'sessions/new'
+    if request.xhr?
+      erb :'sessions/new', layout: false
+    else
+      erb :'sessions/new'
+    end
+    # erb :'sessions/new'
 end
 
 post '/sessions/new' do
