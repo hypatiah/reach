@@ -22,6 +22,7 @@ gem 'bcrypt'
 gem 'pry'
 gem 'dotenv'
 gem 'twilio-ruby'
+gem 'sinatra-flash'
 
 group :test do
     gem 'shoulda-matchers'
