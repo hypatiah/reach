@@ -1,5 +1,5 @@
 get '/sessions/new' do
-    erb :'/sessions/new'
+    erb :'sessions/new'
 end
 
 post '/sessions/new' do
@@ -9,7 +9,7 @@ post '/sessions/new' do
         redirect '/dashboard'
     else
         @error = 'Email or password incorrect!'
-        erb :'/sessions/new'
+        erb :'sessions/new'
     end
 end
 

@@ -8,11 +8,15 @@ get '/send_sms' do
     ENV["TWILIO_ACCOUNT_SID"],
     ENV["TWILIO_AUTH_TOKEN"]
   )
-  client.messages.create(
-    to: to,
-    from: "+16502001654",
-    body: message
-  )
+  if client.messages.create(
+      to: to,
+      from: "+16502001654",
+      body: message
+      )
+    flash[:notice] = "Woot woot, your REACH has been sent!"
+  else
+    flash[:notice] = "Error: REACH did not send"
+  end
   redirect '/dashboard'
 end
 
