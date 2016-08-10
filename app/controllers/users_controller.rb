@@ -11,11 +11,11 @@ post '/users/new' do
             redirect '/dashboard'
         elsif User.find_by(email: @user.email)
             @error = 'Sorry, email already exits'
-            erb :'/users/new'
+            erb :'users/new'
         else p "not rendering errors"
         end
     else @error = "Sorry, passwords don't match"
-         erb :'/users/new'
+         erb :'users/new'
     end
 end
 
