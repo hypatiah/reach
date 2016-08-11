@@ -11,7 +11,8 @@ post '/sessions/new' do
     if request.xhr?
       if @user
         login(@user)
-        redirect '/dashboard'
+        content_type :json
+        { redirectURL: '/dashboard' }.to_json
       else
         @error = 'Email or password invalid'
         erb :'sessions/_new', layout: false

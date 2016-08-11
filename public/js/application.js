@@ -41,7 +41,10 @@ function showLoginError(){
     })
 
     request.done(function(server_response){
-      $('#login_area').html(server_response)
+      if (server_response.redirectURL){
+        window.location = server_response.redirectURL;
+      }
+      else {$('#login_area').html(server_response)}
     })
 
     request.fail(function(){
