@@ -1,20 +1,55 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
-
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
-
- //  def self.send_sms(client, phone_number, alert_message, image_url)
- //   twilio_number = ENV['TWILIO_NUMBER']
- //   message = client.account.messages.create(
- //     from: twilio_number,
- //     to: phone_number,
- //     body: alert_message,
- //     media_url: image_url
- //   )
- //   puts "An SMS notifying the last application error was "\
- //        "sent to #{message.to[0...-4] + "****"}"
- // end
-
+ showLoginForm();
+ showLoginError();
 });
+
+function showLoginForm(){
+  $('#login').on('click', function(event){
+    event.preventDefault();
+
+    const address = $(this).attr('href');
+    const verb = $(this).attr('method');
+
+    var request = $.ajax({
+      url: address,
+      method: verb
+    })
+
+    request.done(function(server_response){
+      $('#login_area').html(server_response)
+    })
+
+    request.fail(function(){
+      alert("Error: login form rendering invalid")
+      console.log(server_response);
+    })
+  })
+}
+
+function showLoginError(){
+  $('#login_area').on('submit', '#mini_log', function(){
+    event.preventDefault();
+
+    var formData = $('#mini_log').serialize();
+    const address = $('#mini_log').attr('action');
+    const verb = $('#mini_log').attr('method');
+
+    var request = $.ajax({
+      url: address,
+      method: verb,
+      data: formData
+    })
+
+    request.done(function(server_response){
+      if (server_response.redirectURL){
+        window.location = server_response.redirectURL;
+      }
+      else {$('#login_area').html(server_response)}
+    })
+
+    request.fail(function(){
+      alert("Error: cannot load invalid input message")
+      console.log(server_response)
+    })
+  })
+}

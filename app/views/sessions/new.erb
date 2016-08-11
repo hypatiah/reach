@@ -1,13 +1,17 @@
-<div class="container">
+<div>
+  <center>
   <h1 class="page-header">Login</h1>
+  <br>
   <form action='/sessions/new' method='post'>
-    <label>Email:</label> <input type="email" name="email" placeholder="email"><br>
+    <label>Email:</label> <input type="email" name="email" placeholder="email">
     <div class="password">
-    <label>Password:</label><input type="password" name="password" placeholder="password"></div><br>
+    <label>Password:</label><input type="password" name="password" placeholder="password">
+  </div>
     <input type="submit" value="Login" class="btn btn-danger">
   </form>
 
   <% if @error %>
     <%= @error %>
   <% end %>
+</center>
 </div>
