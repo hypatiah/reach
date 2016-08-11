@@ -8,12 +8,22 @@ end
 
 post '/sessions/new' do
     @user = User.authenticate(params[:email], params[:password])
-    if @user
+    if request.xhr?
+      if @user
         login(@user)
         redirect '/dashboard'
+      else
+        @error = 'Email or password invalid'
+        erb :'sessions/_new', layout: false
+      end
     else
-        @error = 'Email or password incorrect!'
-        erb :'sessions/new'
+      if @user
+          login(@user)
+          redirect '/dashboard'
+      else
+          @error = 'Email or password invalid'
+          erb :'sessions/new'
+      end
     end
 end
 
