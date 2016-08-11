@@ -1,0 +1,14 @@
+  <br>
+  <form id="mini_log" action='/sessions/new' method='post'>
+    <label>Email:</label> <input type="email" name="email" placeholder="email">
+    <div class="password">
+      <label>Password:</label><input type="password" name="password" placeholder="password">
+    </div>
+    <input type="submit" value="Login" class="btn btn-danger">
+  </form>
+
+  <div>
+    <% if @error %>
+      <%= @error %>
+    <% end %>
+  </div>
