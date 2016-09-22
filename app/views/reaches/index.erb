@@ -7,7 +7,11 @@
 <% end %>
 <div class="list-group">
   <% @user.reaches.each do |reach| %>
-  <a href="/reaches/<%= reach.id %>" class="list-group-item"><%= reach.label %></a>
+  <a href="/reaches/<%= reach.id %>" class="list-group-item"><%= reach.label %>
+    <% if reach.main_reach %>
+      <img id="mini" src="http://i.imgur.com/pPUCMuN.png" alt="main reach">
+    <% end %>
+  </a>
   <% end %>
 </div>
 

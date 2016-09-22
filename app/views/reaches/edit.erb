@@ -10,7 +10,13 @@
       Text: <br>
       <textarea name="reach[text]" rows="5"><%= @reach.text %></textarea><br><br>
       Label: <input type="text" name="reach[label]" value="<%=@reach.label %>"><br><br>
-      <input type="checkbox" name="reach[main_reach]" <% if @reach.main_reach %>checked<% end %>>Set as primary Reach<br><br>
+
+        <% if @reach.main_reach %>
+          <input type="checkbox" name="reach[main_reach]" checked>
+        <% else %>
+          <input type="checkbox" name="reach[main_reach]">
+        <% end %>
+      Set as main Reach<br><br>
       <input type="submit" value="Update" class="btn btn-success"><br>
     </form>
   </div>
