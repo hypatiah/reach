@@ -14,6 +14,6 @@ A Sinatra web application to simplify the process of reaching out by presetting 
 ![Reach](http://i.imgur.com/iMst0bI.png)
 
 ### View all Reaches
-![Reach](http://i.imgur.com/3mjPVSF.png)
-![Reach](http://i.imgur.com/kA2elU3.png)
+![Reach](http://i.imgur.com/pPTkmoq.png)
+![Reach](http://i.imgur.com/CDyAFt4.png)
 
