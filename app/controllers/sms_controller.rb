@@ -3,6 +3,7 @@ get '/send_sms' do
   @user = User.find(session[:user_id])
   reach_count = 0
   error_count = 0
+  sent_flag = false
   @user.reaches.where(main_reach: true).each do |reach|
     to = reach.contact_phone
     message = reach.text + " -- Sent by: #{@user.name} via Reach, you can Reach them at #{@user.phone}"
@@ -23,8 +24,8 @@ get '/send_sms' do
     end
   end
   if sent_flag
-    if count > 1
-      flash[:notice] = "Way to go, your #{count} REACHs have been sent!"
+    if reach_count > 1
+      flash[:notice] = "Way to go, your #{reach_count} Reachs have been sent!"
     else
       flash[:notice] = "Way to go, your REACH has been sent!"
     end
