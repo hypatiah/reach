@@ -1,6 +1,8 @@
 
 # Reach
-A Sinatra web application to simplify the process of reaching out by presetting text messages in a healthy mindset. When a person needs to reach out, they simply open the app and press the 'REACH' button to instantly notifies their support network. Reach alleviates the struggle to find the right words in the moment which typically leads to talking yourself out of getting support in a time of crisis. 
+An application to preset and send text messages so that in a time of crisis a user simply opens the application and clicks ‘REACH’ to notify their support network. Reach enables users to reach out before talking themselves out of seeking help.
+
+Built with Sinatra, a web application library and DSL written in Ruby. 
 
 ## Features
 ### Landing Page
