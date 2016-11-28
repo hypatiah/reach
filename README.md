@@ -17,5 +17,3 @@ Built with Sinatra, a web application library and DSL written in Ruby.
 
 ### View all Reaches
 ![Reach](http://i.imgur.com/pPTkmoq.png)
-![Reach](http://i.imgur.com/CDyAFt4.png)
-
